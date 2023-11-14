@@ -1,0 +1,135 @@
+.sw {
+  margin-top: 1px;
+  background-color: rgba($white, 0.1);
+  padding-block: 2rem;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+
+    @media (max-width: 350px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  &-heading {
+    font-size: 2rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0.5rem;
+      height: 100%;
+      background-color: $yellow;
+      top: 0;
+      left: -1rem;
+      border-radius: 99px;
+    }
+  }
+
+  &-sub-heading {
+    font-size: 1.3rem;
+    position: relative;
+
+    &::before {
+      content: ">";
+      position: absolute;
+      width: 0.5rem;
+      height: 100%;
+      top: 0;
+      right: -1rem;
+    }
+  }
+
+  &-container {
+    position: relative;
+
+    &--overlay {
+      position: absolute;
+      height: 100%;
+      width: 2rem;
+      z-index: 10;
+    }
+  }
+
+  &-list {
+    // background-color: aqua;
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    overflow-x: scroll;
+    padding-inline: 0.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: proximity;
+
+    & li {
+      list-style: none;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &-empty {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+    gap: 3rem;
+
+    & ion-icon {
+      font-size: 4rem;
+    }
+
+    &--text {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+}
+
+.clear-btn {
+  font-family: inherit;
+  background-color: transparent;
+  color: $red;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+
+  &:hover {
+    background-color: rgba($red, 0.1);
+  }
+
+  ion-icon {
+    transform: translateY(2px);
+  }
+}
+
+.overlay {
+  &-1 {
+    left: 0;
+    background: linear-gradient(90deg, rgba($black, 1), transparent);
+  }
+
+  &-2 {
+    background: linear-gradient(90deg, transparent, rgba($black, 1));
+
+    right: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .sw-sub-heading,
+  .clear-btn {
+    margin-left: -2rem;
+  }
+}

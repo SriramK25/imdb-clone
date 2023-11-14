@@ -1,0 +1,74 @@
+$black: rgba(33, 37, 41, 1);
+$pink: rgba(202, 31, 123, 1);
+$yellow: rgba(255, 196, 12, 1);
+$white: rgba(248, 248, 255, 1);
+$blue: rgba(55, 114, 255, 1);
+$red: #fa5252;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+  @media (max-width: 450px) {
+    font-size: 55%;
+    line-height: 1.4;
+  }
+}
+
+body {
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  color: rgba($white, 0.9);
+}
+
+.btn:disabled {
+  background-color: #595959;
+  opacity: 0.2;
+  cursor: not-allowed;
+  color: #b0b0b0;
+
+  &:hover {
+    background-color: #595959;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($white, 0.8);
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($white, 0.4);
+}
+
+.not-found {
+  margin: 10rem 3rem;
+
+  h2 {
+    font-size: 4.6rem;
+  }
+
+  p {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,119 @@
+.card {
+  background-color: $black;
+  width: 18rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &-image-container {
+    height: 25rem;
+    aspect-ratio: 12 / 16;
+    position: relative;
+  }
+
+  &-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+    transition: all 0.3s;
+
+    &:hover {
+      filter: brightness(1);
+    }
+  }
+
+  &-default {
+    position: absolute;
+    height: 60%;
+    width: 60%;
+    inset: 0;
+    margin: auto;
+    border-radius: 15px;
+    filter: grayscale(1) opacity(0.15);
+    z-index: 0;
+    background-image: url(../public/default-img.png);
+    background-size: cover;
+    top: 0;
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  &-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & p {
+      font-weight: 500;
+    }
+
+    & p span {
+      display: inline-block;
+      transform: translateY(2px);
+      margin-right: 5px;
+    }
+  }
+
+  &-title-container {
+    height: 5rem;
+    overflow: hidden;
+  }
+
+  &-title {
+    font-weight: 500;
+  }
+
+  &-btn {
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    color: $blue;
+    font-family: inherit;
+    font-weight: 500;
+    background-color: rgba($white, 0.08);
+
+    &--userrating {
+      background-color: $black;
+      padding-inline: 1rem;
+      font-size: 1.7rem;
+    }
+
+    ion-icon {
+      --ionicon-stroke-width: 40px;
+      transform: translateY(2px);
+    }
+
+    &:hover {
+      background-color: rgba($blue, 0.1);
+    }
+  }
+}
+
+.card-rating--num {
+  padding: 0.5rem;
+  color: $yellow;
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: relative;
+  cursor: context-menu;
+
+  & span {
+    font-size: 1rem;
+    position: absolute;
+    top: -60%;
+    left: 30%;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: rgba($yellow, 0.1);
+    border-radius: 0.5rem;
+  }
+}
